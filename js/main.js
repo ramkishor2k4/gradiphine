@@ -32,32 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Dark / Light Theme Toggle
-  const btnLight = document.getElementById('theme-light');
-  const btnDark = document.getElementById('theme-dark');
-  const currentTheme = localStorage.getItem('gradifine_theme') || 'dark';
-
-  function setTheme(theme) {
-    if (theme === 'dark') {
-      document.body.classList.add('dark-theme');
-      btnDark.classList.add('active');
-      btnLight.classList.remove('active');
-      localStorage.setItem('gradifine_theme', 'dark');
-    } else {
-      document.body.classList.remove('dark-theme');
-      btnLight.classList.add('active');
-      btnDark.classList.remove('active');
-      localStorage.setItem('gradifine_theme', 'light');
-    }
-  }
-
-  if (btnLight && btnDark) {
-    setTheme(currentTheme);
-    btnLight.addEventListener('click', () => setTheme('light'));
-    btnDark.addEventListener('click', () => setTheme('dark'));
-  }
-
-  // 4. Pinned "GET IN TOUCH" Button & "Contact Us" buttons
+  // 3. Pinned "GET IN TOUCH" Button & "Contact Us" buttons
   const getInTouchBtn = document.querySelector('.pinned-get-in-touch');
   const nameInput = document.getElementById('enquiry-name');
   if (getInTouchBtn) {
@@ -144,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (enquiryForm) {
     enquiryForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      
+
       const originalText = submitBtn.textContent;
       submitBtn.textContent = 'Submitting to Gradifine...';
       submitBtn.disabled = true;
