@@ -568,33 +568,45 @@ body.dark-theme .project-thumbnail {
 }
 
 .clients-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 40px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  justify-items: center;
+  gap: 24px;
+  max-width: 1240px;
+  margin: 0 auto;
 }
 
 .client-logo-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80px;
-  width: 100%;
-  filter: brightness(0) invert(1);
-  opacity: 0.75;
-  transition: all 0.3s ease;
+  height: 96px;
+  width: 154px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  opacity: 0.85;
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .client-logo-wrapper:hover {
   opacity: 1;
-  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: var(--primary-accent);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 28px var(--primary-accent-glow);
 }
 
 .client-logo-wrapper img {
-  max-height: 55px;
-  max-width: 140px;
+  max-height: 58px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 /* ---------------- TESTIMONIALS (CLEAN MONOCHROME) ---------------- */
@@ -1161,7 +1173,7 @@ body.dark-theme .theme-switch-container {
   }
 
   .clients-grid {
-    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
   }
 
   .footer-container {
@@ -1236,7 +1248,13 @@ body.dark-theme .theme-switch-container {
   }
 
   .clients-grid {
-    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .client-logo-wrapper {
+    width: 136px;
+    height: 86px;
+    padding: 12px 14px;
   }
 
   .projects-grid {
@@ -1262,7 +1280,17 @@ body.dark-theme .theme-switch-container {
   }
 
   .clients-grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .client-logo-wrapper {
+    width: 120px;
+    height: 78px;
+    padding: 10px 12px;
+  }
+
+  .client-logo-wrapper img {
+    max-height: 48px;
   }
 
   .footer-container {
